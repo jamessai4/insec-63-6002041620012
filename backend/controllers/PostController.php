@@ -8,8 +8,8 @@ use backend\models\PostSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-
+use common\components\AccessControl;
+use backend\controllers\style;
 /**
  * PostController implements the CRUD actions for Post model.
  */
@@ -21,22 +21,26 @@ class PostController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                //'class' => '\common\components\AccessControl',
+                'class' => AccessControl::class
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
                 ],
             ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['create', 'index','view','update','delete'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
+            // 'access' => [
+            //     'class' => AccessControl::className(),
+            //     'rules' => [
+            //         [
+            //             'actions' => ['create', 'index','view','update','delete'],
+            //             'allow' => true,
+            //             'roles' => ['@'],
+            //         ],
+            //     ],
+            // ],
         ];
     }
 
@@ -46,7 +50,7 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
-        if(yii::$app->user->can('post_list') ){
+        if(yii::$app->user->can('post-index') ){
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
