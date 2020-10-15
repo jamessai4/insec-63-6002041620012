@@ -3,7 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\AuthAssignment;
+use backend\models\AuthAssignment;
 use backend\models\AuthAssignmentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

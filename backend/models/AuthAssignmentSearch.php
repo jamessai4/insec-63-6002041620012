@@ -4,10 +4,10 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\AuthAssignment;
+use backend\models\AuthAssignment;
 
 /**
- * AuthAssignmentSearch represents the model behind the search form of `common\models\AuthAssignment`.
+ * AuthAssignmentSearch represents the model behind the search form of `backend\models\AuthAssignment`.
  */
 class AuthAssignmentSearch extends AuthAssignment
 {

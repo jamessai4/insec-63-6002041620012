@@ -24,7 +24,7 @@ class PostController extends Controller
             'access' => [
                 //'class' => '\common\components\AccessControl',
                 'class' => AccessControl::class
-            ],
+            ],    
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

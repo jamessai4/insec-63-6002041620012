@@ -14,8 +14,6 @@ class User extends \yii\web\User {
     public $identityClass = '\common\models\User';
 
     public function checkAccess($operation, $params = [], $allowCaching = true) {
-        echo 'test';
-        return false;
         // Always return true when SuperAdmin user
         if (\Yii::$app->user->id  == 1) {
             return true;
