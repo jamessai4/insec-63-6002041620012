@@ -5,6 +5,7 @@ use yii\db\Migration;
 /**
  * Class m201105_113721_create_assign_user
  */
+class m201105_113721_create_assign_user extends Migration
 {
     /**
      * {@inheritdoc}
